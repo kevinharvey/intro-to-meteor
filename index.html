@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 
 		<title>Introduction to Meteor.js</title>
+		<link rel="icon" href="https://meteor.com/favicon.png" type="image/png">
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -45,15 +46,22 @@
 				<section>
 					<h1>An Introduction to Meteor.js</h1>
 					<p>
-						<small>
-							<a href="http://kevinharvey.net">Kevin Harvey</a> | 
-							<a href="http://twitter.com/kevinharvey">@kevinharvey</a>
-						</small>
+						<a href="http://kevinharvey.net">Kevin Harvey</a> | 
+						<a href="http://twitter.com/kevinharvey">@kevinharvey</a>
 					</p>
+				</section>
+				
+				<section>
+					<h2>Agenda</h2>
+					<ol>
+						<li>Introductions</li>
+						<li>Conceptual Overview</li>
+						<li>Demo</li>
+					</ol>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
+					<h2>Agenda</h2>
 					<p>
 						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
 						support for CSS 3D transforms to see it in its full glory.
@@ -117,23 +125,6 @@
 						<li>Two is smaller than...</li>
 						<li>Three!</li>
 					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
 				</section>
 
 				<section id="transitions">
@@ -352,12 +343,21 @@ function linkify( selector ) {
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+
+		</script>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-6562734-2', 'auto');
+		  ga('send', 'pageview');
 
 		</script>
 
