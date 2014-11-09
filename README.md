@@ -1,4 +1,6 @@
-intro-to-meteor
-===============
+Introduction to Meteor
+======================
 
-Reveal.js presentation for "Introduction to Meteor.js"
+A reveal.js presentation for "Introduction to Meteor.js".
+
+You can see this presentation at http://kevinharvey.net/intro-to-meteor/.

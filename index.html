@@ -43,7 +43,8 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				
+				<section id="intro">
 					<h1>An Introduction to Meteor.js</h1>
 					<p>
 						<a href="http://kevinharvey.net">Kevin Harvey</a> | 
@@ -51,7 +52,7 @@
 					</p>
 				</section>
 				
-				<section>
+				<section id="agenda">
 					<h2>Agenda</h2>
 					<ol>
 						<li>Introductions</li>
@@ -60,106 +61,125 @@
 					</ol>
 				</section>
 
-				<section>
-					<h2>Agenda</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
+				<section id="who-is-this-guy">
+					<h2>Who is this guy?</h2>
+					<ul>
+						<li>Senior Systems Engineer at <a href="http://smilecareclub.com/">SmileCareClub</a></li>
+						<li>Building the web since 2004</li>
+					</ul>
+				</section>
+				
+				<section id="who-are-you-guys">
+					<h2>Who are you guys?</h2>
+					
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						1. Front end vs. back end
+						2. Used Meteor previously
+						3. Used Meteor in production
 					</aside>
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<h2>Vertical Slides</h2>
-					<p>
-						Slides can be nested inside of other slides,
-						try pressing <a href="#" class="navigate-down">down</a>.
-					</p>
-					<a href="#" class="image navigate-down">
-						<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-					</a>
+				<section id="what-is-meteor">
+					<h1>What is Meteor?</h1>
+					
+					<aside class="notes">
+						1. Instead of jumping right into the demo...
+						2. Significant departure from typcial frameworks
+					</aside>
 				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
+				<section id="full-stack-web-framework">
+					<h2>Full-stack web framework</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>Pure-Javascript</li>
+						<li>Same API on the front and back ends</li>
 					</ul>
 				</section>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
+				<section id="what-is-it-like">
+					<h2>What is it like?</h2>
+					
+					<aside class="notes">
+						1. Often compared to Angular...
+						2. Got a back end
+					</aside>
+				</section>
+				
+				<section id="how-is-it-different">
+					<h2>How is it different?</h2>
+					<p class="fragment roll-in">Requests vs. Subscription</p>
+					
+					<aside class="notes">
+						1. Traditional web applications rely on the request/response loop...
+						2. This is the key differentiator
+					</aside>
+				</section>
+
+				<section id="single-page-apps">
+					<h2>Single-Page Apps</h2>
+					<p>
+						<small>
+							... unless you install a router package
+						</small>
+					</p>
+					
+					<aside class="notes">
+						The reason it's compared to Angular most often is it's great at single-page apps
+					</asidec>
+				</section>
+
+				<section id="database-everywhere">
+					<h2>Database Everywhere</h2>
+					<ul>
+						<li>MongoDB on the server</li>
+						<li>MiniMongo in the browser</li>
+						<li>Meteor keeps it all in sync</li>
+					</ul>
+				</section>
+
+				<section id="reactivity">
+					<h2>Reactivity</h2>
+					<p>
+						<small>This is some serious hocus pocus</small>
+					</p>
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
+						<li class="fragment roll-in">Client UI and database are updated first</li>
+						<li class="fragment roll-in">Changes sent to server</li>
+						<li class="fragment roll-in">Issues are resolved after the fact</li>
+					</ol>
+				</section>
+				
+				<section id="latency-compensation">
+					<h2>Latency Compensation</h2>
+					<p>
+						<small>Continuing the wizadry theme</small>
+					</p>
+					<ol>
+						<li class="fragment roll-in">Changes from the server are updated automatically</li>
+						<li class="fragment roll-in">Models are simulated locally</li>
 					</ol>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
+				<section id="framework-plus-package-manager">
+					<h2>Framework + Package Manager</h2>
+					<pre><code data-trim contenteditable>
+$ meteor create myapp
+$ meteor add accounts-ui accounts-password
+$ meteor run
+					</code></pre>
+					
+					<aside class="notes">
+						Not only is does meteor create and run you app for development, it's also it's own package manager
+					</aside>
 				</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
+				<section id="development-happens-fast">
+					<h2>Development Happens Fast</h2>
+					<ol>
+						<li class="fragment roll-in">Hardly any boilerplate</li>
+						<li class="fragment roll-in">Tons of stuff for free</li>
+						<li class="fragment roll-in">Context switching reduced</li>
+					</ol>
 				</section>
 
 				<section>
@@ -252,11 +272,11 @@ function linkify( selector ) {
 					<section id="fragments">
 						<h2>Fragmented Views</h2>
 						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
+						<p class="fragment roll-in">... to step through ...</p>
 						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
+							<li class="fragment roll-in"><code>any type</code></li>
+							<li class="fragment roll-in"><em>of view</em></li>
+							<li class="fragment roll-in"><strong>fragments</strong></li>
 						</ol>
 
 						<aside class="notes">
