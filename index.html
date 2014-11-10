@@ -162,10 +162,10 @@
 
 				<section id="framework-plus-package-manager">
 					<h2>Framework + Package Manager</h2>
-					<pre><code data-trim contenteditable>
+					<pre><code data-trim>
 $ meteor create myapp
 $ meteor add accounts-ui accounts-password
-$ meteor run
+$ meteor
 					</code></pre>
 					
 					<aside class="notes">
@@ -186,7 +186,278 @@ $ meteor run
 					<h1>Demo</h1>
 				</section>
 
+				<section id="installing-meteor">
+					<h2>Installing Meteor</h2>
+					<pre><code data-trim>
+$ curl https://install.meteor.com | /bin/sh
+					</code></pre>
+					
+				</section>
 				
+				
+				<section id="creating-and-running-a-project">
+					<div style="float:left">
+						<h2>Starting a Project</h2>
+						<pre><code data-trim>
+$ meteor create the-questionator
+$ cd the-questionator
+$ meteor
+						</code></pre>
+					</div>
+	
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+					
+					<aside class="notes">
+						git checkout 0e8d8bc41bb780659af222d55ae39941886464db
+						meteor
+					</aside>
+				</section>
+				
+				<section id="initial-project-structure">
+					<h2>Initial Project Structure</h2>
+					<pre><code data-trim>
+$ ls
+.meteor
+the-questionator.css
+the-questionator.html
+the-questionator.js
+					</code></pre>
+				</section>
+				
+				<section id="initial-html-file">
+					<h2>the-questionator.html</h2>
+					<pre><code data-trim>
+&lt;head&gt;
+  &lt;title&gt;the-questionator&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Welcome to Meteor!&lt;/h1&gt;
+
+  {{&gt; hello}}
+&lt;/body&gt;
+
+&lt;template name="hello"&gt;
+  &lt;button&gt;Click Me&lt;/button&gt;
+  &lt;p&gt;You've pressed the button {{counter}} times.&lt;/p&gt;
+&lt;/template&gt;
+					</code></pre>
+					
+					<aside class="notes">
+						The default templating language is called "Spacebars"
+					</aside>
+				</section>
+				
+				<section id="initial-html-file">
+					<h2>the-questionator.js</h2>
+					<pre><code data-trim>
+if (Meteor.isClient) {
+  // counter starts at 0
+  Session.setDefault("counter", 0);
+
+  Template.hello.helpers({
+    counter: function () {
+      return Session.get("counter");
+    }
+  });
+
+  Template.hello.events({
+    'click button': function () {
+      // increment the counter when button is clicked
+      Session.set("counter", Session.get("counter") + 1);
+    }
+  });
+}
+
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    // code to run on server at startup
+  });
+}
+					</code></pre>
+				</section>
+				
+				<section id="installing-bootstrap">
+					<div style="float:left">
+						<h2>Installing Bootstrap</h2>
+						<pre><code data-trim>
+$ meteor add mizzao:bootstrap-3
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+					
+					<aside class="notes">
+						6cb5e166cfb5d341a7c48d0518208e56c3f64581
+					</aside>
+				</section>
+				
+				<section id="moar-prettier">
+					<div style="float:left">						
+						<h2>Make Moar Prettier</h2>
+						<pre><code data-trim>
+$ the-questionator.html
+...
+&lt;body&gt;
+  &lt;div class="container-fluid" 
+	style="padding-top:60px;"&gt;
+    
+    &lt;nav role="navigation"
+      class="navbar navbar-default navbar-fixed-top"&gt;
+      &lt;div class="container-fluid"&gt;
+        &lt;div class="navbar-header"&gt;
+          &lt;a class="navbar-brand" href="#"&gt;
+            The Questionator
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+
+    {{&gt; hello}}
+  &lt;/div&gt;
+&lt;/body&gt;
+...
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+					
+					<aside class="notes">
+						97284406042a434e45fb9fdb8961946b07c51507
+					</aside>
+				</section>
+				
+				<section id="even-moar-prettier">
+					<div style="float:left">						
+						<h2>Even Moar Prettier!</h2>
+						<pre><code data-trim>
+$ the-questionator.html
+...
+    &lt;form role="form"&gt;
+      &lt;div class="form-group"&gt;
+        &lt;textarea id="question"
+          class="form-control" rows="2"&gt;
+        &lt;/textarea&gt;
+        &lt;div class="form-group"&gt;
+          &lt;input class="btn btn-default"
+            type="submit" value="Ask away" /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+    {{> hello}}
+  &lt;/div&gt;
+&lt;/body&gt;
+...
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+					
+					<aside class="notes">
+						a2b8364122a437d9128f933cee08054997e61cce
+					</aside>
+				</section>
+				
+				<section id="template-inclusion">
+					<h2>Template Inclusion</h2>
+					<pre><code data-trim>
+$ the-questionator.html
+...
+    {{&gt; hello}}
+...
+&lt;template name="hello"&gt;
+  &lt;button&gt;Click Me&lt;/button&gt;
+  &lt;p&gt;You've pressed the button {{counter}} times.&lt;/p&gt;
+&lt;/template&gt;
+					</code></pre>
+				</section>
+				
+				<section id="extending-the-template">
+					<div style="float:left">
+						<h3>Extending the Template</h3>						
+						<pre><code data-trim>
+$ the-questionator.html
+...
+    {{> questionsList}}
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;template name="questionsList"&gt;
+  &lt;div id="questions"&gt;
+    {{#each questions}}
+      &lt;hr /&gt;
+      &lt;h6&gt;{{text}} &lt;small&gt;Votes: {{votes}}&lt;/small&gt;&lt;/h6&gt;
+      &lt;a class="btn btn-default btn-xs"&gt;up&lt;/a&gt;
+      &lt;a class="btn btn-default btn-xs"&gt;down&lt;/a&gt;
+    {{/each}}    
+  &lt;/div&gt;
+  &lt;hr /&gt;
+&lt;/template&gt;
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+					
+					<aside class="notes">
+						Code update on next slide.
+					</aside>
+				</section>
+
+				<section id="hardcoded-data">
+					<div style="float:left">
+						<h2>Hardcoded Data</h2>						
+						<pre><code data-trim>
+$ the-questionator.js
+if (Meteor.isClient){
+  var questionsData = [
+    {
+      text: 'Why does the sun shine?',
+      votes: 0
+    },
+    {
+      text: 'If you were a hot dog, and you'
+	   + 'were starving to death, would you eat yourself?',
+      votes: 0
+    },
+    {
+      text: 'What is the airspeed velocity'
+	  	+ ' of an unladen swallow?',
+      votes: 0
+    }
+  ];
+
+  Template.questionsList.helpers({
+    questions: questionsData
+  });
+}
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+					
+					<aside class="notes">
+						98926d42151e43666c53349a2c8e124607e6883a
+					</aside>
+				</section>
 
 			</div>
 
