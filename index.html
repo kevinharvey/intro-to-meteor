@@ -162,7 +162,7 @@
 
 				<section id="framework-plus-package-manager">
 					<h2>Framework + Package Manager</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 $ meteor create myapp
 $ meteor add accounts-ui accounts-password
 $ meteor
@@ -188,7 +188,7 @@ $ meteor
 
 				<section id="installing-meteor">
 					<h2>Installing Meteor</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 $ curl https://install.meteor.com | /bin/sh
 					</code></pre>
 					
@@ -198,7 +198,7 @@ $ curl https://install.meteor.com | /bin/sh
 				<section id="creating-and-running-a-project">
 					<div style="float:left">
 						<h2>Starting a Project</h2>
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ meteor create the-questionator
 $ cd the-questionator
 $ meteor
@@ -206,7 +206,7 @@ $ meteor
 					</div>
 	
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -218,7 +218,7 @@ $ meteor
 				
 				<section id="initial-project-structure">
 					<h2>Initial Project Structure</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 $ ls
 .meteor
 the-questionator.css
@@ -229,7 +229,7 @@ the-questionator.js
 				
 				<section id="initial-html-file">
 					<h2>the-questionator.html</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 &lt;head&gt;
   &lt;title&gt;the-questionator&lt;/title&gt;
 &lt;/head&gt;
@@ -253,7 +253,7 @@ the-questionator.js
 				
 				<section id="initial-html-file">
 					<h2>the-questionator.js</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
@@ -283,13 +283,13 @@ if (Meteor.isServer) {
 				<section id="installing-bootstrap">
 					<div style="float:left">
 						<h2>Installing Bootstrap</h2>
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ meteor add mizzao:bootstrap-3
 						</code></pre>
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -301,7 +301,7 @@ $ meteor add mizzao:bootstrap-3
 				<section id="moar-prettier">
 					<div style="float:left">						
 						<h2>Make Moar Prettier</h2>
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ the-questionator.html
 ...
 &lt;body&gt;
@@ -327,7 +327,7 @@ $ the-questionator.html
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -339,7 +339,7 @@ $ the-questionator.html
 				<section id="even-moar-prettier">
 					<div style="float:left">						
 						<h2>Even Moar Prettier!</h2>
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ the-questionator.html
 ...
     &lt;form role="form"&gt;
@@ -362,7 +362,7 @@ $ the-questionator.html
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -373,7 +373,7 @@ $ the-questionator.html
 				
 				<section id="template-inclusion">
 					<h2>Template Inclusion</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 $ the-questionator.html
 ...
     {{&gt; hello}}
@@ -388,7 +388,7 @@ $ the-questionator.html
 				<section id="extending-the-template">
 					<div style="float:left">
 						<h3>Extending the Template</h3>						
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ the-questionator.html
 ...
     {{> questionsList}}
@@ -400,8 +400,8 @@ $ the-questionator.html
     {{#each questions}}
       &lt;hr /&gt;
       &lt;h6&gt;{{text}} &lt;small&gt;Votes: {{votes}}&lt;/small&gt;&lt;/h6&gt;
-      &lt;a class="btn btn-default btn-xs"&gt;up&lt;/a&gt;
-      &lt;a class="btn btn-default btn-xs"&gt;down&lt;/a&gt;
+      &lt;a class="btn btn-default btn-xs vote-up"&gt;up&lt;/a&gt;
+      &lt;a class="btn btn-default btn-xs vote-down"&gt;down&lt;/a&gt;
     {{/each}}    
   &lt;/div&gt;
   &lt;hr /&gt;
@@ -410,7 +410,7 @@ $ the-questionator.html
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -422,7 +422,7 @@ $ the-questionator.html
 				<section id="hardcoded-data">
 					<div style="float:left">
 						<h2>Hardcoded Data</h2>						
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ the-questionator.js
 if (Meteor.isClient){
   var questionsData = [
@@ -450,7 +450,7 @@ if (Meteor.isClient){
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -461,7 +461,7 @@ if (Meteor.isClient){
         
         <section id="creating-a-collection">
           <h2>Creating a Collection</h2>
-					<pre><code data-trim>
+					<pre style="width:100%;"><code data-trim>
 $ the-questionator.js
 Questions = new Mongo.Collection('questions');
 ...
@@ -476,7 +476,7 @@ Questions = new Mongo.Collection('questions');
           <h2>Available in Client and Server</h2>
   
           <h4>Terminal</h4>
-          <pre><code data-trim>
+          <pre style="width:100%;"><code data-trim>
 $ meteor mongo
 MongoDB shell version: 2.4.9
 connecting to: 127.0.0.1:3001/meteor
@@ -485,7 +485,7 @@ meteor:PRIMARY> db.questions.find()
           </code></pre>
           
           <h4>Browser Console</h4>
-          <pre><code data-trim>
+          <pre style="width:100%;"><code data-trim>
 &gt; Questions.find()
 &gt; LocalCollection.Cursor {collection: LocalCollection, sorter: null, _selectorId: undefined...}
           </code></pre>
@@ -494,7 +494,7 @@ meteor:PRIMARY> db.questions.find()
 				<section id="update-the-helper">
 					<div style="float:left">
 						<h2>Update the Helper</h2>						
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ the-questionator.js
 Questions = new Mongo.Collection('questions');
 
@@ -507,7 +507,7 @@ if (Meteor.isClient){
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -519,7 +519,7 @@ if (Meteor.isClient){
 				<section id="preload-data">
 					<div style="float:left">
 						<h2>Preload Data</h2>						
-						<pre><code data-trim>
+						<pre style="width:100%;"><code data-trim>
 $ the-questionator.js
 
 if (Meteor.isServer) {
@@ -544,7 +544,7 @@ if (Meteor.isServer) {
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -559,7 +559,7 @@ if (Meteor.isServer) {
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -572,13 +572,13 @@ if (Meteor.isServer) {
 				<section id="remove-autopublish">
 					<div style="float:left">
 						<h2>Remove Autopublish</h2>
-            <pre><code data-trim>
+            <pre style="width:100%;"><code data-trim>
 $ meteor remove autopublish
             </code></pre>
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -590,7 +590,7 @@ $ meteor remove autopublish
 				<section id="publishing">
 					<div style="float:left">
 						<h2>Publishing Data</h2>
-            <pre><code data-trim>
+            <pre style="width:100%;"><code data-trim>
 if (Meteor.isClient) {
   Meteor.subscribe('questions');
   ...
@@ -606,7 +606,7 @@ if (Meteor.isServer) {
 					</div>
 
 					<iframe 
-						style="background-color:white;float:right;width:320px;height:480px"
+						style="float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -616,8 +616,221 @@ if (Meteor.isServer) {
             In reality, this allows for fine-grained control of what is sent to the client.
 					</aside>
 				</section>
+
+				<section id="sorting-results">
+					<div style="float:left;">
+						<h2>Sorting Results</h2>
+            <pre style="width:100%;"><code data-trim>
+Template.questionsList.helpers({
+  questions: Questions.find({}, {sort: {votes: -1}}), 
+});
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+	
+					<aside class="notes">
+            f5c5a93bd00cee143138cbe6a04e98006f72626e
+					</aside>
+				</section> 
         
+				<section id="event-handling">
+					<div style="float:left;">
+						<h2>Event Handling</h2>
+            <pre style="width:100%;"><code data-trim>
+if (Meteor.isClient) {
+...  
+  Template.questionsList.events({
+    'click .vote-up': function(e) {
+      e.preventDefault();
+      Meteor.call('upvote', this._id);
+    },
+    
+    'click .vote-down': function(e) {
+      e.preventDefault();
+      Meteor.call('downvote', this._id);
+    }
+  });
+}
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            Commit hash in 'methods' slide
+					</aside>
+				</section>
+
+				<section id="methods">
+					<div style="float:left;">
+						<h2>Methods</h2>
+            <pre style="width:100%;"><code data-trim>
+Meteor.methods({
+  upvote: function(questionId) {
+    var question = Questions.findOne(questionId);
+    Questions.update(
+      questionId,
+      { $set: { votes: question.votes + 1 }}
+    );
+  },
+  
+  downvote: function(questionId) {
+    var question = Questions.findOne(questionId);
+    Questions.update(
+      questionId,
+      { $set: { votes: question.votes - 1 }}
+    );
+  }
+});
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            8529986895d27bf106efd4d48e7d83bb733689e0
+					</aside>
+				</section>
+
+				<section id="template-refactor">
+					<div style="float:left;">
+						<h2>Template Refactor</h2>
+            <pre style="width:100%;"><code data-trim>
+    {{> questionForm}}
+...
+&lt;template name="questionForm"&gt;
+  &lt;form role="form"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;textarea id="question"
+        class="form-control" rows="2"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;input class="btn btn-primary"
+        type="submit" value="Ask away" /&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/template&gt;
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            Git hash in 'rinse-and-repeat' slide
+					</aside>
+				</section>
         
+				<section id="rinse-and-repeat">
+					<div style="float:left;">
+						<h2>Rinse and Repeat</h2>
+            <pre style="width:100%;"><code data-trim>
+if (Meteor.isClient) {
+...
+  Template.questionForm.events({
+    'submit form': function(e) {
+      Questions.insert({
+        'text': $(e.target).find('#question').val(),
+        'votes': 0
+      });
+    }
+  });
+}
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            15a233ac6829932ae518a5a2b758010c2f8b7804
+					</aside>
+				</section>
+        
+        <section id="accounts">
+          <h2>Accounts</h2>
+          <pre><code data-trim>
+$ meteor add accounts-twitter
+$ meteor add ian:accounts-ui-bootstrap-3
+          </code></pre>
+          
+          <pre><code data-trim>
+{{&gt; loginButtons}}
+          </code></pre>
+        </section>
+
+        <section id="adding-loginButtons">
+          <h2>Adding {{> loginButtons}}</h2>
+          <pre><code data-trim>
+&lt;div class="navbar-header"&gt;
+  &lt;a class="navbar-brand" href="#"&gt;The Questionator&lt;/a&gt;
+  
+  &lt;button type="button" class="navbar-toggle collapsed" 
+    data-toggle="collapse" data-target="#navigation"&gt;
+    &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="collapse navbar-collapse" id="navigation"&gt;
+  &lt;ul class="nav navbar-nav navbar-right"&gt;
+    {{&gt; loginButtons}}
+  &lt;/ul&gt; 
+&lt;/div&gt;
+          </code></pre>
+        </section>
+        
+        <section id="configuring-twitter-login">
+          <h2>Configure Twitter Login</h2>
+					<iframe 
+						style="width:100%;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            4802b03561e151b8bacaefd1d69a0b5f89b7aab1
+            API Key: OaAtzi0jcKhHJ5Pse8K2KH46U
+            API Secret: hfNvcGLIsZA63lqo5Olhr48BdyfHeSQSJbNQ9X24PDJdXa1aZu
+					</aside>
+				</section>
+
+				<section id="restrict-access">
+					<div style="float:left;">
+						<h2>Restricting Access</h2>
+            <pre style="width:100%;"><code data-trim>
+Questions.allow({
+  insert: function(userId, doc) {
+    return !! userId;
+  }
+});
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            274a59fb580985126775a3892c05955a7c240f68
+					</aside>
+				</section>        
   		</div>
 
 		</div>
