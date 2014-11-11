@@ -206,12 +206,12 @@ $ meteor
 					</div>
 	
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
 					<aside class="notes">
-						git checkout 0e8d8bc41bb780659af222d55ae39941886464db
+						0e8d8bc41bb780659af222d55ae39941886464db
 						meteor
 					</aside>
 				</section>
@@ -289,7 +289,7 @@ $ meteor add mizzao:bootstrap-3
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -327,7 +327,7 @@ $ the-questionator.html
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -362,7 +362,7 @@ $ the-questionator.html
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -410,7 +410,7 @@ $ the-questionator.html
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -450,7 +450,7 @@ if (Meteor.isClient){
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 					
@@ -507,7 +507,7 @@ if (Meteor.isClient){
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -544,7 +544,7 @@ if (Meteor.isServer) {
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -559,7 +559,7 @@ if (Meteor.isServer) {
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -578,7 +578,7 @@ $ meteor remove autopublish
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -606,7 +606,7 @@ if (Meteor.isServer) {
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -628,7 +628,7 @@ Template.questionsList.helpers({
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 	
@@ -659,7 +659,7 @@ if (Meteor.isClient) {
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 
@@ -693,7 +693,7 @@ Meteor.methods({
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 
@@ -724,7 +724,7 @@ Meteor.methods({
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 
@@ -752,7 +752,7 @@ if (Meteor.isClient) {
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 
@@ -810,7 +810,7 @@ $ meteor add ian:accounts-ui-bootstrap-3
 					</aside>
 				</section>
 
-				<section id="restrict-access">
+				<section id="restricting-access">
 					<div style="float:left;">
 						<h2>Restricting Access</h2>
             <pre style="width:100%;"><code data-trim>
@@ -819,18 +819,38 @@ Questions.allow({
     return !! userId;
   }
 });
+
+// .. and the methods we added earlier
             </code></pre>
 					</div>
 
 					<iframe 
-						style="float:right;width:320px;height:480px"
+						style="background-color:white;float:right;width:320px;height:480px"
 						src="http://localhost:3000">
 					</iframe>
 
 					<aside class="notes">
             274a59fb580985126775a3892c05955a7c240f68
 					</aside>
-				</section>        
+				</section>
+
+				<section id="removing-insecure">
+					<div style="float:left;">
+						<h2>Removing "Insecure"</h2>
+            <pre style="width:100%;"><code data-trim>
+$ meteor remove insecure
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+
+					<aside class="notes">
+            d0ed45bf2f28254dfceb54cf67af099b238a3605
+					</aside>
+				</section>
   		</div>
 
 		</div>
