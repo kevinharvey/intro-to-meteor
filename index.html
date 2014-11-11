@@ -184,7 +184,10 @@ $ meteor
 
 				<section id="demo">
 					<h1>Demo</h1>
-				</section>
+          <h3 class="fragment roll-in">
+            <a href="http://questionator.meteor.com">questionator.meteor.com</a>
+				   </h3>
+        </section>
 
 				<section id="installing-meteor">
 					<h2>Installing Meteor</h2>
@@ -422,6 +425,9 @@ $ the-questionator.html
 					</iframe>
 					
 					<aside class="notes">
+            Notice the {{> questionsList}}, {{#each}}, and {{variable}} syntax.<br />
+            Handlebars-like<br />
+            'name=' gives us acess to the template in JS<br />
 						Code update on next slide.
 					</aside>
 				</section>
@@ -496,6 +502,10 @@ meteor:PRIMARY> db.questions.find()
 &gt; Questions.find()
 &gt; LocalCollection.Cursor {collection: LocalCollection, sorter: null, _selectorId: undefined...}
           </code></pre>
+          
+          <aside class="notes">
+            'meteor' command starts MongoDB on port 3001 on your local machine
+          </aside>
         </section>
 
 				<section id="update-the-helper">
@@ -590,7 +600,9 @@ $ meteor remove autopublish
 					</iframe>
 	
 					<aside class="notes">
-            ee57256c6fcb62446499cd6aa3002593299c8ea0
+            ee57256c6fcb62446499cd6aa3002593299c8ea0<br />
+            autopublish makes it easier to start prototyping quickly<br />
+            NOT FOR PRODUCTION<br />
 					</aside>
 				</section>
         
