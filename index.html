@@ -870,6 +870,144 @@ $ meteor remove insecure
             d0ed45bf2f28254dfceb54cf67af099b238a3605
 					</aside>
 				</section>
+        
+        <section>
+          <h1>End of Demo</h1>
+          
+					<iframe 
+						style="width:100%;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+        </section>
+        
+				<section id="deployment">
+					<h1>Deployment</h1>
+          
+          <aside class="notes">
+            This is a little beyond the scope of this talk, but just to give you a few ideas...
+          </aside>
+				</section>
+        
+				<section id="deploy-to-meteor-dot-com">
+					<h2>Deploy to meteor.com</h2>
+          <pre><code data-trim>
+$ meteor deploy questionator.meteor.com
+Deploying to http://questionator.meteor.com
+          </code></pre>
+          
+          <aside class="notes">
+            That's how I deployed the sample app for this talk.<br />
+            Will ask you for an email address, and then just work.
+          </aside>
+				</section>
+        
+				<section id="modulus">
+					<h2>Modulus</h2>
+          <pre><code data-trim>
+$ npm install -g modulus
+$ modulus login
+$ modulus project create
+          </code></pre>
+          
+          <aside class="notes">
+            PaaS privder specializing in Node.js apps.<br />
+            Open sourced 'demeteorizer' for turning metoer apps into straight up Node.js
+          </aside>
+				</section>
+
+				<section id="meteor-up">
+					<h2>Meteor Up</h2>
+          <pre><code data-trim>
+$ npm install -g mup
+$ mkdir ~/deploy-the-questionator
+$ cd ~/deploy-the-questionator
+$ mup init
+          </code></pre>
+          
+          <aside class="notes">
+            Install to your own AWS, Digital Ocean, etc.
+          </aside>
+				</section>
+                
+				<section id="behind-the-curtain">
+					<h1>Behind the curtain...</h1>
+          
+          <aside class="notes">
+            A few random topics to help take some of the magic out all this
+          </aside>
+				</section>
+        
+				<section id="web-sockets">
+					<h2>Web Sockets</h2>
+          <p>A departure from the request/response loop</p>
+          <a href="https://developer.mozilla.org/en-US/docs/WebSockets">
+            https://developer.mozilla.org/en-US/docs/WebSockets
+          </a>
+          
+          <aside class="notes">
+            Opens a socket between a server and the client browser.
+          </aside>
+				</section>
+        
+				<section id="ddp">
+					<h2>Distributed Data Protocol (DDP)</h2>
+          <p>Publication &amp; Subscription</p>
+          <a href="http://2012.realtimeconf.com/video/matt-debergalis">
+            http://2012.realtimeconf.com/video/matt-debergalis
+          </a>
+          
+          <aside class="notes">
+            Meteor-specific protocol for managing publications and subscriptions over a web socket
+          </aside>
+				</section>
+        
+				<section id="oplog-tailing">
+					<h2>Oplog Tailing</h2>
+          <p>Getting realtime updates from MongoDB</p>
+          <a href="https://github.com/meteor/meteor/wiki/Oplog-Observe-Driver">
+            https://github.com/meteor/meteor/wiki/Oplog-Observe-Driver
+          </a>
+          
+          <aside class="notes">
+            How Meteor gets realtime updates from MongoDB
+          </aside>
+				</section>
+        
+				<section id="tracker">
+					<h2>Tracker</h2>
+          <p>Hot code pushes, reactions to database changes, etc. </p>
+          <a href="https://github.com/meteor/meteor/tree/devel/packages/tracker">
+            https://github.com/meteor/meteor/tree/devel/packages/tracker
+          </a>
+          
+          <aside class="notes">
+            Keeps track of dependent computations<br />
+            Previously known as 'Deps'
+          </aside>
+				</section>
+        
+        <section id="resources">
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="https://www.discovermeteor.com/">discovermeteor.com</a></li>
+            <li><a href="https://docs.meteor.com/">docs.meteor.com</a></li>
+            <li><a href="http://www.meetup.com/Meteor-Nashville/">Meteor Nashville Meetup</a></li>
+            <li><a href="https://trello.com/b/hjBDflxp/meteor-roadmap">Meteor Roadmap on Trello</a></li>
+          </ul>
+        </section>
+
+				<section id="fin">
+					<h1>Fin</h1>
+				</section>
+        
+				<section id="thanks">
+					<h1>Thanks</h1>
+					<p>
+						<a href="http://kevinharvey.net">Kevin Harvey</a> | 
+						<a href="http://twitter.com/kevinharvey">@kevinharvey</a>
+					</p>
+				</section>
+        
   		</div>
 
 		</div>
