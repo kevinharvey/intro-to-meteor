@@ -347,10 +347,10 @@ $ the-questionator.html
         &lt;textarea id="question"
           class="form-control" rows="2"&gt;
         &lt;/textarea&gt;
-        &lt;div class="form-group"&gt;
-          &lt;input class="btn btn-default"
-            type="submit" value="Ask away" /&gt;
-        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;input class="btn btn-default"
+          type="submit" value="Ask away" /&gt;
       &lt;/div&gt;
     &lt;/form&gt;
 
@@ -458,8 +458,167 @@ if (Meteor.isClient){
 						98926d42151e43666c53349a2c8e124607e6883a
 					</aside>
 				</section>
+        
+        <section id="creating-a-collection">
+          <h2>Creating a Collection</h2>
+					<pre><code data-trim>
+$ the-questionator.js
+Questions = new Mongo.Collection('questions');
+...
+          </code></pre>
+          
+          <aside class="notes">
+            c48d697579cb52f7f065a4f00928f013878100ac
+          </aside>
+        </section>
+        
+        <section id="available-in-client-and-server">
+          <h2>Available in Client and Server</h2>
+  
+          <h4>Terminal</h4>
+          <pre><code data-trim>
+$ meteor mongo
+MongoDB shell version: 2.4.9
+connecting to: 127.0.0.1:3001/meteor
+Welcome to the MongoDB shell.
+meteor:PRIMARY> db.questions.find()
+          </code></pre>
+          
+          <h4>Browser Console</h4>
+          <pre><code data-trim>
+&gt; Questions.find()
+&gt; LocalCollection.Cursor {collection: LocalCollection, sorter: null, _selectorId: undefined...}
+          </code></pre>
+        </section>
 
-			</div>
+				<section id="update-the-helper">
+					<div style="float:left">
+						<h2>Update the Helper</h2>						
+						<pre><code data-trim>
+$ the-questionator.js
+Questions = new Mongo.Collection('questions');
+
+if (Meteor.isClient){
+  Template.questionsList.helpers({
+    questions: Questions.find(),
+  });
+}
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+	
+					<aside class="notes">
+						65798515ae94176ce4b42d3a1d9a5567dca6ba6e
+					</aside>
+				</section>
+
+				<section id="preload-data">
+					<div style="float:left">
+						<h2>Preload Data</h2>						
+						<pre><code data-trim>
+$ the-questionator.js
+
+if (Meteor.isServer) {
+  if (Questions.find().count() === 0) {
+    Questions.insert({
+      text: 'Why does the sun shine?',
+      votes: 0
+    });
+
+    Questions.insert({
+      text: 'If you were a hot dog, and you were...',
+      votes: 0 
+    });
+
+    Questions.insert({
+      text: 'What is the airspeed velocity of...',
+      votes: 0 
+    });
+  }
+}
+						</code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+	
+					<aside class="notes">
+						2c4870635460a0ef7eac5c4b20cd8176b01a83ce
+					</aside>
+				</section>
+        
+				<section id="manipulating-data">
+					<div style="float:left">
+						<h2>Manipulating Data</h2>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+	
+					<aside class="notes">
+            Try editing the data in a different browser window.
+					</aside>
+				</section>
+        
+        
+				<section id="remove-autopublish">
+					<div style="float:left">
+						<h2>Remove Autopublish</h2>
+            <pre><code data-trim>
+$ meteor remove autopublish
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+	
+					<aside class="notes">
+            ee57256c6fcb62446499cd6aa3002593299c8ea0
+					</aside>
+				</section>
+        
+				<section id="publishing">
+					<div style="float:left">
+						<h2>Publishing Data</h2>
+            <pre><code data-trim>
+if (Meteor.isClient) {
+  Meteor.subscribe('questions');
+  ...
+}
+
+if (Meteor.isServer) {
+  ...
+  Meteor.publish('questions', function() {
+    return Questions.find();
+  });
+}
+            </code></pre>
+					</div>
+
+					<iframe 
+						style="background-color:white;float:right;width:320px;height:480px"
+						src="http://localhost:3000">
+					</iframe>
+	
+					<aside class="notes">
+            864c77cad1cbb1d6e76713d6f3e6bed9be23e3d4
+            
+            In reality, this allows for fine-grained control of what is sent to the client.
+					</aside>
+				</section>
+        
+        
+  		</div>
 
 		</div>
 
